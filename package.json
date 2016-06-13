@@ -1,0 +1,25 @@
+{
+  "name": "filter-promise",
+  "version": "0.1.0",
+  "description": "Let me filter your promise content",
+  "main": "src/index.js",
+  "files": [
+    "src/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "gulp test",
+    "prepublish": "gulp lint"
+  },
+  "author": "Alex V. Povar",
+  "license": "BSD-3-Clause",
+    "devDependencies": {
+    "benchmark": "^2.1.0",
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
+
+}
