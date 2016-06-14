@@ -13,13 +13,13 @@
   },
   "author": "Alex V. Povar",
   "license": "BSD-3-Clause",
-    "devDependencies": {
+  "devDependencies": {
     "benchmark": "^2.1.0",
+    "bluebird": "^3.4.0",
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
     "gulp-mocha": "^2.2.0",
     "mocha": "^2.4.5"
   }
-
 }

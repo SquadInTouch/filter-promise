@@ -14,6 +14,11 @@ const FilterBuilder = function(Promise){
 	 * @returns {Function} to pass into .then()
 	 */
 	const filter = function(predicate, optErrorConstructor){
+		// yes, awaiting function here
+		if (typeof predicate !== 'function') {
+			throw new TypeError();
+		}
+
 		const errorConstructor = optErrorConstructor || Error;	// using provided error constructor or Error's as default
 
 		/** function to pass into .then() */
