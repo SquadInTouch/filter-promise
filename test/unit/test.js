@@ -25,26 +25,4 @@ describe('filter-promise', () => {
 		});
 	});
 
-	// it('should get value with "get"', () => {
-	// 	const obj = {
-	// 		one: {
-	// 			two: {
-	// 				three: {
-	// 					name: 'John'
-	// 				},
-	// 				array1: [1, 2, 3],
-	// 				array2: [
-	// 					{id: 123},
-	// 					{id: 234}
-	// 				]
-	// 			}
-	// 		}
-	// 	};
-	//
-	// 	expect(dotten.get(obj, ['one', 'two', 'three'])).to.be.deep.equal({name: "John"});
-	// 	expect(dotten.get(obj, ['one', 'two', 'three', 'name'])).to.be.equal("John");
-	// 	expect(dotten.get(obj, ['one', 'two', 'array1', 0])).to.be.equal(1);
-	// 	expect(dotten.get(obj, ['one', 'two', 'array2', 0, "id"])).to.be.equal(123);
-	// 	expect(dotten.get(obj, ['six', 'two', 'array2', 0, "id"])).to.be.undefined;
-	// });
 });

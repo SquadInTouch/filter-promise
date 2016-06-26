@@ -16,7 +16,7 @@ const FilterBuilder = function(Promise){
 	const filter = function(predicate, optErrorConstructor){
 		// yes, awaiting function here
 		if (typeof predicate !== 'function') {
-			throw new TypeError();
+			throw new TypeError('promise-filter: predicate should be a function');
 		}
 
 		const errorConstructor = optErrorConstructor || Error;	// using provided error constructor or Error's as default
