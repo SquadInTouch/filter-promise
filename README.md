@@ -31,5 +31,7 @@ const agedUser = getUserFromDB().then( user => {
 
 ```
 
+## Notes
 
+ES6-only. `const` and `let` are everywhere
 
