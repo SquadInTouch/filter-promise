@@ -14,8 +14,7 @@ const FilterBuilder = function(Promise){
 	 * @returns {Function} to pass into .then()
 	 */
 	const filter = function(predicate, optErrorConstructor){
-		// yes, awaiting function here
-		if (typeof predicate !== 'function') {
+		if (typeof predicate !== 'function') {	// predicate should be definitely a function
 			throw new TypeError('promise-filter: predicate should be a function');
 		}
 
@@ -27,7 +26,7 @@ const FilterBuilder = function(Promise){
 			if(!!result) {
 				return Promise.resolve(value);
 			} else {
-				return Promise.reject(new errorConstructor('Not found suitable object'));
+				return Promise.reject(new errorConstructor('Not found object to pass predicate'));
 			}
 		};
 	};
@@ -38,7 +37,7 @@ const FilterBuilder = function(Promise){
 		return filter(a => typeof a !== 'undefined' && a !== null, optErrorConstructor);
 	};
 
-	/** Verifies that given object is not empty: not undefined and not null.
+	/** Verifies that given object is exists: not undefined and not null.
 	 * If you need to return custom error use filter.definedOrError instead
 	 **/
 	filter.defined = filter(a => typeof a !== 'undefined' && a !== null);

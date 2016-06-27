@@ -25,4 +25,14 @@ describe('filter-promise', () => {
 		});
 	});
 
+	it('should turn to rejected promise is error thrown in predicate', done => {
+		Promise.resolve('value')
+			.then(filter( str => {
+				throw new Error('Holly Cow!');
+			}))
+			.then(
+				str => console.err('This should not happen'),
+				err => done()
+			);
+	});
 });
