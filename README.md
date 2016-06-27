@@ -1,5 +1,8 @@
 # Filter-Promise
 
+[![Build Status](https://travis-ci.org/SquadInTouch/filter-promise.svg?branch=master)](https://travis-ci.org/SquadInTouch/filter-promise)
+
+
 Library to bring human-oriented filtering for Promises.
 
 ## Which problem do we solve?
