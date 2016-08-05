@@ -35,4 +35,40 @@ describe('filter-promise', () => {
 				err => done()
 			);
 	});
+
+	it('should be able to build error from string', done => {
+		Promise.resolve()
+			.then(filter( () => false, 'This is error'))
+			.catch( err => {
+				expect(err.message).to.be.equal('This is error');
+				done();
+			});
+	});
+
+	it('should be able to build error from Error', done => {
+		Promise.resolve()
+			.then(filter( () => false))
+			.catch( err => {
+				expect(err instanceof Error).to.be.true;
+				expect(err.message).to.be.defined;
+				expect(err.message).to.be.a('string');
+				done();
+			});
+	});
+
+	it('should be able to build error from custom error', done => {
+		const CustomError = function () {
+			this.isCustomError = true;
+		};
+		CustomError.prototype = new Error();
+
+		Promise.resolve()
+			.then(filter( () => false, () => new CustomError))
+			.catch( err => {
+				expect(err.isCustomError).to.be.true;
+				expect(err.message).to.be.defined;
+				expect(err.message).to.be.a('string');
+				done();
+			});
+	});
 });

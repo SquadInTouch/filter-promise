@@ -1,6 +1,6 @@
 {
   "name": "filter-promise",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Let me filter your promise content",
   "main": "src/index.js",
   "files": [
