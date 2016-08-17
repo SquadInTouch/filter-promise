@@ -25,7 +25,7 @@ const FilterBuilder = function(Promise){
 				errorConstructor = optErrorConstructorOrString;
 				break;
 			case optErrorConstructorOrString instanceof Error:		// it was error instance! Will return it as is
-				errorConstructor = (msg) => optErrorConstructorOrString;
+				errorConstructor = () => optErrorConstructorOrString;
 				break;
 			case typeof optErrorConstructorOrString === 'string' || optErrorConstructorOrString instanceof String:	// it was string - will return Error with that text
 				errorConstructor = () => new Error(optErrorConstructorOrString);

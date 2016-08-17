@@ -71,4 +71,12 @@ describe('filter-promise', () => {
 				done();
 			});
 	});
+
+	it('#defined should not pass null', done => {
+		Promise.resolve(null).then(filter.defined).catch( err => {
+			expect(err).to.be.defined;
+			expect(err.message).to.be.defined;
+			done();
+		});
+	});
 });
